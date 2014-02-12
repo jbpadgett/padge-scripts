@@ -1,5 +1,5 @@
 #!/bin/sh
-# sar io report over range of time on el distros
+# sar io report over range of time on enterprise linux distros
 # view the output in ksar for nice graphs
 now=$(date +"%F")
 home=$(echo $HOME)
