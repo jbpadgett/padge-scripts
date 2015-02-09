@@ -1,6 +1,9 @@
 #!/bin/sh
 
 #Rync with status spinner
+#An ssh public key must exist on the remote host first in authorized_keys
+#eg) Use ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
+
 
 #debug mode
 #set -x
@@ -37,10 +40,10 @@ spinner()
 
 
 #Commands
-if [ ! -f $mydest ]
+if [ ! -d $mydest ]
 then
 	echo "The rsync dirs do not exist already..."	
-	echo "Please wait ..."
+	echo "Initial Sync, Please wait ..."
 	rsync -azvh -e ssh $mysource $myremoteuser@$mydest
 	echo "Rsync is complete, please have a beer!"
 else	
