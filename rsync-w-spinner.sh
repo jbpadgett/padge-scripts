@@ -12,7 +12,8 @@ mysource=$HOME/s-rsync
 
 # Destination
 myremotesrv=fqdn.foo.com
-mydest=$myremotesrv/$HOME/d-rsync/	
+myremoteuser=darthvader
+mydest=:/$HOME/d-rsync/
 
 # Task waiting animation spinner
 # borrowed spinner function from @marascio
@@ -40,12 +41,12 @@ if [ ! -f $mydest ]
 then
 	echo "The rsync dirs do not exist already..."	
 	echo "Please wait ..."
-	rsync -azvh $mysource $mydest & spinner $!
+	rsync -azvh -e ssh $mysource $myremoteuser@$mydest
 	echo "Rsync is complete, please have a beer!"
 else	
 	echo "The rsync dirs exits, we will update it now with deltas..."
 	echo "Please wait ..."
-	rsync -azvh $mysource $mydest & spinner $!
+	rsync -azvh -e ssh $mysource $myremoteuser@$mydest #& spinner $!
 	echo "Rsync is complete, please have 2 beers!"
 fi
 
