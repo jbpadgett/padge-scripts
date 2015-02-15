@@ -27,8 +27,7 @@ nmap -sP -PE 10.10.10.1-254 > ~/pingsweep1.txt
 curl -G 'http://mygrafana.db.bar:8086/mychecks/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from my_process where result =~ /error/ and time > now() - 2h limit 1000" ; echo
 
 
-# Remove offending key from known_hosts file
-
+# Remove a problem key from known_hosts file (line number reported in error)
 sed -i 18 d .ssh/known_hosts
 
 #The one-liner does this by passing commands to vi:
@@ -36,7 +35,6 @@ sed -i 18 d .ssh/known_hosts
 #wq -- save the file and exit
 
 #or this one liner works also:
-
 ssh-keygen -R <hostname>
 
 
