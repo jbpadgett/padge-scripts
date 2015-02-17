@@ -37,6 +37,10 @@ sed -i 18 d .ssh/known_hosts
 #or this one liner works also:
 ssh-keygen -R <hostname>
 
+#Find and list disk usage in the current directory sorted in decreasing order
+du -s * | sort -rn | cut -f2 | xargs -d '\n' du -sh
+
+
 
 #Find out Top 10 Largest Files or Directories (per bashoneliners.com)
 du -sk /var/log/* | sort -r -n | head -10
