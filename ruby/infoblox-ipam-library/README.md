@@ -1,4 +1,4 @@
-gapIPAM  README
+IPAM  README
 =================
 Maintainer:  JBPadgett
 Created: 6/2014
