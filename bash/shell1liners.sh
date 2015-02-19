@@ -42,19 +42,19 @@ du -s * | sort -rn | cut -f2 | xargs -d '\n' du -sh
 
 
 
-#Find out Top 10 Largest Files or Directories (per bashoneliners.com)
+#Find out Top 10 Largest Files or Directories 
 du -sk /var/log/* | sort -r -n | head -10
 
 
-#Find List of Unique Words in a file (per bashoneliners.com)
+#Find List of Unique Words in a file 
 tr -c a-zA-Z '\n' < Readme1.txt  | sed '/^$/d' | sort | uniq -i -c
 
 
-#Display Username and UID sorted by UID (per bashoneliners.com)
+#Display Username and UID sorted by UID 
 cut -d ':' -f 1,3 /etc/passwd | sort -t ':' -k2n - | tr ':' '\t'
 
 
-#Find recent logs that contain the string "Exception" (per bashoneliners.com)
+#Find recent logs that contain the string "Exception" 
 find . -name '*.log' -mtime -2 -exec grep -Hc MyException {} \; | grep -v :0$
 
 
