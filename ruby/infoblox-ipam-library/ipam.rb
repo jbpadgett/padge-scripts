@@ -182,7 +182,7 @@ puts "The IPv4 Search is complete."
 #puts NSearch
 
 # Find network object name by extensible attributes environment
-#NSearch2 = Ipam::IpamGetip.new("dev_cloud").findNetbyEAenv
+#NSearch2 = Ipam::IpamGetip.new("mycloud").findNetbyEAenv
 #puts NSearch2
 
 # Find network object name by extensible attributes environment
@@ -191,7 +191,7 @@ puts "The IPv4 Search is complete."
 
 
 # Find network object name by extensible attributes vlan
-#NSearch = Ipam::IpamGetip.new("1200").findNetbyEAvlan
+#NSearch = Ipam::IpamGetip.new("1010").findNetbyEAvlan
 #puts NSearch
 
 
