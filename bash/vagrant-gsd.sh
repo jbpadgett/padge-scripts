@@ -10,7 +10,7 @@ set -o errexit -o nounset -o pipefail
 vgs=$(vagrant global-status | awk 'NR==3, NR==5 {print $1}')
 for i in $vgs 
 #do echo "vagrant destroy $i"
-do yes | vagrant destroy $i
+do yes | vagrant destroy --force $i
 done
 
 
