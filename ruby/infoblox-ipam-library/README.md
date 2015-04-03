@@ -2,7 +2,7 @@ IPAM  README
 =================
 Maintainer:  JBPadgett
 Created: 6/2014
-Status: incomplete
+Status: Incomplete
 
 Overview
 ==========
@@ -17,19 +17,7 @@ The primary modifications if needed will be the ipam user account and password a
 Usage
 ===============
 
-Ruby Command line utilities (TBD)
------------------------------
-ipam_search.rb
-
-ipam_getip.rb
-
-ipam_addrecord.rb
-
-ipam_updaterecord.rb
-
-ipam_deleterecord.rb
-
-ipam_bulkcsvadd.rb
+TBD
 
 
 Ruby Library
