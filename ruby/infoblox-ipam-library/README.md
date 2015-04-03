@@ -20,13 +20,4 @@ Usage
 TBD
 
 
-Ruby Library
--------------
-A ruby library is at the heart of this project which can allow you to leverage method directly in custom code you may wish to use.
-Include the library file in your code to use it.
-
-
-
-
-
 
