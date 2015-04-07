@@ -11,6 +11,7 @@ else
 fi
 
 # HASHICORP PATHS
+# NOTE This portion of this script can be placed in your .bashrc or .bash_profile file.
 # Set required paths for running hashicorp tools binaries
 for p in $HOME/hashicorp/*/; do
 	export HASHIPATH="$p"
