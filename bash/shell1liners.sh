@@ -27,6 +27,10 @@ nmap -sP -PE 10.10.10.1-254 > ~/pingsweep1.txt
 curl -G 'http://mygrafana.db.bar:8086/mychecks/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from my_process where result =~ /error/ and time > now() - 2h limit 1000" ; echo
 
 
+# Grab the IP of a running docker container from the docker host
+CONTAINER=$(docker ps | awk 'NR==2, NR==5 {print $1}') && docker inspect $CONTAINER | grep IPAddress | awk '{ print $2 }' | tr -d ',"'
+
+
 # Remove a problem key from known_hosts file (line number reported in error)
 sed -i 18 d .ssh/known_hosts
 
