@@ -11,7 +11,7 @@ set -o errexit -o nounset
 
 dpsd=$(docker ps -a | awk '{print $1}')
 
-for i in $dps
+for i in $dpsd
  do docker stop $i && docker rm $i
 done
 
