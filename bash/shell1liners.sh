@@ -28,7 +28,11 @@ curl -G 'http://mygrafana.db.bar:8086/mychecks/series?u=root&p=root&pretty=true'
 
 
 # Grab the IP of a running docker container from the docker host
-CONTAINER=$(docker ps | awk 'NR==2, NR==5 {print $1}') && docker inspect $CONTAINER | grep IPAddress | awk '{ print $2 }' | tr -d ',"'
+ CONTAINER=$(docker ps | awk 'NR==2, NR==5 {print $1}') && docker inspect $CONTAINER | grep IPAddress | awk '{ print $2 }' | tr -d ',"'
+
+
+# List and then stop and remove residual filesystems for docker containers on a dockerhost
+dpsd=$(docker ps -a | awk '{print $1}'); for i in $dpsd; do docker stop $i && docker rm $i; done; echo "Containers stopped & fs deleted for..."; echo $dpsd;
 
 
 # Remove a problem key from known_hosts file (line number reported in error)
