@@ -72,7 +72,7 @@ $ clear;while x=0; do clear;date;echo "";echo "  [Count] | [IP ADDR]";echo "----
 
 
 #Converts all PNG image files in current directory to PDF using ImageMagick
-for i in $(find *.PNG); do convert "$i" "`basename $i .PNG`.pdf" &; done
+for i in $(find *.PNG); do convert "$i" "`basename $i .PNG`.pdf"; done
 
 
 
