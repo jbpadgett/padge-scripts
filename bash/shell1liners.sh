@@ -67,10 +67,12 @@ find . -name '*.log' -mtime -2 -exec grep -Hc MyException {} \; | grep -v :0$
 
 
 #Displays the quantity of connections to port 80 on a per IP basis (per bashoneliners.com)
+# Uses an infinite loop to display output from netstat, reformatted with grep, awk, and cut piped into uniq to provide the count. Complete with a pretty header. Polls every 5 seconds
 $ clear;while x=0; do clear;date;echo "";echo "  [Count] | [IP ADDR]";echo "-------------------";netstat -np|grep :80|grep -v LISTEN|awk '{print $5}'|cut -d: -f1|uniq -c; sleep 5;done
 
-# Uses an infinite loop to display output from netstat, reformatted with grep, awk, and cut piped into uniq to provide the count. Complete with a pretty header. Polls every 5 seconds
 
+#Converts all PNG image files in current directory to PDF using ImageMagick
+for i in $(find *.PNG); do parallel -j 3 convert "$i" "`basename $i .PNG`.pdf"; done
 
 
 
