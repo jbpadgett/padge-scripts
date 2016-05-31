@@ -9,7 +9,6 @@ for i in mydbserver0{1,2,3}; do nc -vzw1 $i 3306; done
 
 # Arping uses arp to find nodes on network for network troubleshooting
 arping -w1 -I eth0 myserver001.foo.bar
-
 arping -w1 -I en0 192.168.1.100
 
 
@@ -21,6 +20,11 @@ sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 ips.txt | while read i ; do ping -c1 -W
 
 # Nmap approach is usually best
 nmap -sP -PE 10.10.10.1-254 > ~/pingsweep1.txt
+
+
+#Recursive Git Pull of all subdirectories in parent
+# via http://stackoverflow.com/questions/3497123/run-git-pull-over-all-subdirectories
+find . -name ".git" -type d | sed 's/\/.git//' |  xargs -P10 -I{} git -C {} pull
 
 
 # Grafana + influxdb + shell to grab stats (using influx as raw event store)
