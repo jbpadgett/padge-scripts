@@ -79,6 +79,7 @@ $ clear;while x=0; do clear;date;echo "";echo "  [Count] | [IP ADDR]";echo "----
 for i in $(find *.PNG); do convert "$i" "`basename $i .PNG`.pdf"; done
 
 
-
+#Updates all the VIM bundles installed recursively for you
+cd ~/.vim/bundle && for dir in */; do cd "$dir" && pwd && git pull && cd .. && ls; done
 
 
